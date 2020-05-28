@@ -37,6 +37,5 @@ ftpSrv.begin("username", "password");
 ftpSrv.handleFTP(); // place this in e.g. loop()
 ```
 
-
 ## Notes
 I forked from https://github.com/nailbuster/esp8266FTPServer which itself was forked from: https://github.com/gallegojm/Arduino-Ftp-Server/tree/master/FtpServer
