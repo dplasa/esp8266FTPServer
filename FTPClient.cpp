@@ -19,9 +19,9 @@ const FTPClient::Status &FTPClient::transfer(const String &localFileName, const 
     _remoteFileName = remoteFileName;
     _direction = direction;
 
-    if (direction & FTP_GET)
+    if (direction & FTP_GET_NONBLOCKING)
       file = THEFS.open(localFileName, "w");
-    else if (direction & FTP_PUT)
+    else if (direction & FTP_PUT_NONBLOCKING)
       file = THEFS.open(localFileName, "r");
 
     if (!file)
