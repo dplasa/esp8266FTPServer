@@ -562,8 +562,12 @@ int8_t FTPServer::processCommand()
         uint32_t fs = file.size();
         String fileTime = makeDateTimeStr(file.getLastWrite());
         file.close();
-        if (cwd == FPSTR(aSlash) && fn[0] == '/')
-          fn.remove(0, 1);
+        dashPos = fn.lastIndexOf(F("/"));
+        if (dashPos >= 0)
+        {
+          fn.remove(0, dashPos + 1);
+        }
+
 
         if (FTP_CMD(LIST) == command)
         {
